@@ -21,7 +21,7 @@ def to_numpy_type(some_data):
             raise AttributeError("Unknown data type %s" % type(some_data))
 
 
-class abnb_interface:
+class abnb_interface(object):
     def __init__(self, data_path):
         #input_file_name = data_path#'C:/Users/Friedrich/Desktop/listings.csv'
         self.acc_data = pd.read_csv(data_path)  # powerful pandas
@@ -52,7 +52,7 @@ class abnb_interface:
             This function adds a integer column to identify the room_type
             Associated data is stored in dict() self.room_dict
 
-            return: None
+            :return: None
         '''
         ctr = 0
         room_type_id_list = []
@@ -111,7 +111,7 @@ class abnb_interface:
         '''
             Function rus a query in the data, if input is of the correct data type
 
-            return: If correct data type: Query result as pandas.Dataframe
+            :return: If correct data type: Query result as pandas.Dataframe
                     Else: Empty pandas.Dataframe
         '''
         # runs a query if input types are correct - TODO: build up query generally to allow missing arguments
@@ -127,7 +127,7 @@ class abnb_interface:
         '''
             Function rus a query in the data, if input is of the correct data type
 
-            return: If correct data type: Query result as pandas.Dataframe
+            :return: If correct data type: Query result as pandas.Dataframe
                     Else: Empty pandas.Dataframe
         '''
         # runs a query if input types are correct - TODO: build up query generally to allow missing arguments
@@ -142,104 +142,6 @@ class abnb_interface:
             log.warning('type_check failed. No value is returned. In function %s' %
                         self.get_data_from_features.__name__)
             return pd.DataFrame()
-
-
-
-
-
-
-# price = 10.
-# room_type = {}
-# host_id = 10
-# accommodates = 0
-# bedrooms = 0
-#
-# count_dict = {}
-#
-# room_dict = {}
-# ctr = 0
-# new_int_list = []
-# acc_data = m.acc_data
-# for el in acc_data.room_type.values:
-#     if not room_dict.has_key(el):
-#         room_dict[el] = ctr
-#         ctr+=1
-#     new_int_list.append(room_dict[el])
-#
-# acc_data = acc_data.assign(room_type_id=pd.Series(new_int_list).values)
-#
-#
-#
-#
-# prices = acc_data.price
-# for p in prices.values:
-#     if not count_dict.has_key(p):
-#         count_dict[p] = acc_data.query('price==%f' % p)
-#
-# non_unique_list = []
-#
-# for k,v in count_dict.iteritems():
-#     if v.shape[0]>1:
-#         slist = v.host_id.values
-#         slist.sort()
-#         for i in range(len(slist)-1):
-#             if slist[i] == slist[i+1]:
-#                 non_unique_list.append((slist[i+1],k))
-#
-# #remove double elements
-# non_unique_list = set(non_unique_list)
-#
-#
-# non_unique_list2 = []
-# for el in non_unique_list:
-#     this_data = acc_data.query('price==%f&host_id==%d' % (el[1],el[0]))
-#     slist = this_data.bedrooms.values
-#     slist.sort()
-#     for i in range(len(slist) - 1):
-#         if slist[i] == slist[i + 1]:
-#             non_unique_list2.append((el[0],el[1],slist[i + 1]))
-#
-# non_unique_list2 = set(non_unique_list2)
-#
-# non_unique_list3 = []
-# for el in non_unique_list2:
-#     this_data = acc_data.query('price==%f&host_id==%d&bedrooms==%f' % (el[1],el[0],el[2]))
-#     slist = this_data.accommodates.values
-#     slist.sort()
-#     for i in range(len(slist) - 1):
-#         if slist[i] == slist[i + 1]:
-#             non_unique_list3.append((el[0],el[1],el[2],slist[i + 1]))
-#
-# non_unique_list3 = set(non_unique_list3)
-#
-# non_unique_list4 = []
-# for el in non_unique_list3:
-#     this_data = acc_data.query('price==%f&host_id==%d&bedrooms==%f&accommodates==%d' % (el[1],el[0],el[2],el[3]))
-#     slist = this_data.room_type_id.values
-#     slist.sort()
-#     for i in range(len(slist) - 1):
-#         if slist[i] == slist[i + 1]:
-#             non_unique_list4.append((el[0],el[1],el[2],el[3],slist[i + 1]))
-#
-# non_unique_list4 = set(non_unique_list4)
-#
-# non_unique_list5 = []
-# for el in non_unique_list4:
-#     this_data = acc_data.query('price==%f&host_id==%d&bedrooms==%f&accommodates==%d&room_type_id==%d' % (el[1],el[0],el[2],el[3],el[4]))
-#     slist = this_data.bathrooms.values
-#     slist.sort()
-#     for i in range(len(slist) - 1):
-#         if slist[i] == slist[i + 1]:
-#             non_unique_list5.append((el[0],el[1],el[2],el[3],el[4],slist[i + 1]))
-#
-# non_unique_list5 = set(non_unique_list5)
-#
-#
-#
-#
-# for el in list(non_unique_list5):
-#     print(el)
-
 
 
 

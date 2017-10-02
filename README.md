@@ -20,6 +20,7 @@ virtualenv -p PATH_TO_PYTHON_INTERPRETER/python2.7 PROJECT
 
 Clone project and run setup file.
 ```
+cd PROJECT
 git clone git@github.com:mBHyuC/rob_invites.git
 cd rob_invites
 python setup.py install
