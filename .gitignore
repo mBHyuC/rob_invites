@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!results/*
+!task/*
+!README.md
+!setup.py
+!example.py
+!*/

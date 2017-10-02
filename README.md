@@ -7,7 +7,24 @@ Download the data from [here](https://data.insideairbnb.com/germany/be/berlin/20
 
 ### Step 2:
 One may want to create a virtuel env first.
-Run ``` setup.py install ```
+
+```
+cd PROJECT_LOCATION
+virtualenv PROJECT
+call PROJECT/Scripts/activate
+```
+or
+```
+virtualenv -p PATH_TO_PYTHON_INTERPRETER/python2.7 PROJECT
+```
+
+Clone project and run setup file.
+```
+git clone git@github.com:mBHyuC/rob_invites.git
+cd rob_invites
+python setup.py install
+```
+
 
 ## General information:
 Each model has three types of methods:
