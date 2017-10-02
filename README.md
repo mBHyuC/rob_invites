@@ -8,8 +8,11 @@ Project created and tested with python 2.7.10
 ### Step 1:
 Download the data from >[here](https://data.insideairbnb.com/germany/be/berlin/2017-05-08/data/listings.csv.gz)<.
 
+Extraxt the .zip file to the projects data folder.
+
 ### Step 2:
 One may want to create a virtual environment before running the setup file.
+
 Virtual environment activation for Windows
 ```
 cd PROJECT_LOCATION
