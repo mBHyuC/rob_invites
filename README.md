@@ -6,16 +6,18 @@ Project created and tested with python 2.7.10
 Download the data from >[here](https://data.insideairbnb.com/germany/be/berlin/2017-05-08/data/listings.csv.gz)<.
 
 ### Step 2:
-One may want to create a virtuel env first.
-
+One may want to create a virtual environment before running the install file.
 ```
 cd PROJECT_LOCATION
 virtualenv PROJECT
 call PROJECT/Scripts/activate
 ```
-or
+
+Or with the interpreter of your choice.
 ```
+cd PROJECT_LOCATION
 virtualenv -p PATH_TO_PYTHON_INTERPRETER/python2.7 PROJECT
+call PROJECT/Scripts/activate
 ```
 
 Clone project and run setup file.
