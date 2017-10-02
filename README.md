@@ -3,7 +3,7 @@
 Project created and tested with python 2.7.10
 
 ### Step 1:
-Download the data from [here](https://data.insideairbnb.com/germany/be/berlin/2017-05-08/data/listings.csv.gz).
+Download the data from >[here](https://data.insideairbnb.com/germany/be/berlin/2017-05-08/data/listings.csv.gz)<.
 
 ### Step 2:
 One may want to create a virtuel env first.
