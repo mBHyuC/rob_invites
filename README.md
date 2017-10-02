@@ -55,31 +55,38 @@ Return: all possible locations with corresponding score (for heatmap)
 ## Preassumtions:
 ### I
 Description: Privacy: Rob is clever, he has knowledge of the historically Airbnb data.
+
 Assumption: "..never shares his current address.." -> Queries that result in exactly one solution can be ignored (complexity reduction)
 
 ### II
 Description: Rob lives in Berlin.
+
 Assumption: Rob lives in an Airbnb that is listed in the data used. The data used is correct (some location are far off).
 
 ### III
 Description: Rob changes locations, not rooms at the same location
+
 Assumption: One host count as one possible location. The probability for Rob to stay at a certain host is independent of  the number of rooms offered. (hold only for the base model)
 
 ### IV
 Description: Rob does not stay longer than a week.
+
 Assumption: Weekly and monthly prices are not considered
 
 ## Model assumptions:
 ### Base model:
 Description: The given features are elements of the data.
+
 Assumption: The score is calculated as one divided by the number of possible locations
 
 ### Price uncertainty model  - derived from base model:
 Description: From the point in time Rob invites his colleges to the point in time the colleges check for the possible location. The price could possible change.
+
 Assumption: There is a fix percentage range in which the price can grow or fall. Furthermore there are two probabilities. One that specify the chance the price was correct and is now wrong and a second that specify the chance the price was wrong  and is now right.
 
 ### Personality model - derived from base model:
 Description: An evening dinner is quite personal. Rob only invites colleges he know a little better. The colleges know that he prefers Airbnb with good ratings. 
+
 Assumption: The score is correlated with the Airbnb rating (it is not done, but could be a parameter that decides what rating Rob prefers)
 
 
